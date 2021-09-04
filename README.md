@@ -1,24 +1,8 @@
-# README
+# The Stoics Journal API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Storing Reflections and Making Connections
 
-Things you may want to cover:
+This backend API is designed to retrieve and present quotations from ancient Stoic authors at random for the user to reflect upon and write responses to in their own personal journal.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Endeavors
+I still love Ancient Greek and Latin(so much so that I have several degrees in it!). When I have more time, I hope to start translating these texts on my own, adding more organization to the topics discussed.
