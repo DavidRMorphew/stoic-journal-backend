@@ -1,4 +1,3 @@
-
 class TextFormatter < ApplicationRecord
     # Test text
     # meditations = File.open("./texts/marcus_aurelius_meditations.txt")
@@ -17,6 +16,8 @@ class TextFormatter < ApplicationRecord
                 # method to set author for quotes: set_author(section)
             elsif section.match(/TRANSLATOR/)
                 # method to set translator for quotes set_translator(section)
+            elsif section.match(/TITLE/)
+                # method to set title for quotes set_title(section)
             else
                 section
             end
