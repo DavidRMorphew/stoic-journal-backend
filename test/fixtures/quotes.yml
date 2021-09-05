@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_id: 1
+  author_id: 1
+  translator_id: 1
+  body: MyText
+  book_num: MyString
+  section_num: 1
+
+two:
+  book_id: 1
+  author_id: 1
+  translator_id: 1
+  body: MyText
+  book_num: MyString
+  section_num: 1
