@@ -10,14 +10,15 @@ class TextFormatter < ApplicationRecord
     def self.create_paragraphs(text_file)
         sections_split = text_file.split(/\n\n/)
         array_of_sections = sections_split.map do |section|
-            if section.match(/BOOK/)
-                set_book_number(section)
-            elsif section.match(/AUTHOR/)
+            case section
+            when /AUTHOR/
                 # method to set author for quotes: set_author(section)
-            elsif section.match(/TRANSLATOR/)
-                # method to set translator for quotes set_translator(section)
-            elsif section.match(/TITLE/)
+            when /TITLE/
                 # method to set title for quotes set_title(section)
+            when /TRANSLATOR/
+                # method to set translator for quotes set_translator(section)
+            when /BOOK/
+                set_book_number(section)
             else
                 section
             end

@@ -1,6 +1,6 @@
-TITLE: Meditations
-
 AUTHOR: Marcus Aurelius
+
+TITLE: Meditations
 
 TRANSLATOR: George Long
 
