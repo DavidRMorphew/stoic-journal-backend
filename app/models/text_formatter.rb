@@ -18,8 +18,8 @@ class TextFormatter < ApplicationRecord
                 @@author = self.find_or_create_author_by_name(author_name)
             when /TITLE/
                 # method to set title for quotes set_title(section)
-
-                binding.pry
+                work_title = section.split(": ")[1]
+                @@work = self.find_or_create_work_by_title(work_title)
             when /TRANSLATOR/
                 # method to set translator for quotes set_translator(section)
             when /BOOK/
@@ -33,6 +33,10 @@ class TextFormatter < ApplicationRecord
 
     def self.find_or_create_author_by_name(name)
         author = (Author.find_by(name: name) || Author.create(name: name))
+    end
+
+    def self.find_or_create_work_by_title(title)
+        work = (@@author.works.find_by(title: work_title) || @@author.works.create(title: work_title))
     end
     
     def self.set_book_number(book_number)
