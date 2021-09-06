@@ -15,6 +15,7 @@ class TextFormatter < ApplicationRecord
             when /AUTHOR/
                 # method to set author for quotes: set_author(section)
                 author_name = section.split(": ")[1]
+                author = self.find_or_create_author_by_name(author_name)
             when /TITLE/
                 # method to set title for quotes set_title(section)
             when /TRANSLATOR/
