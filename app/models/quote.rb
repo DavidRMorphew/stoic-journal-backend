@@ -1,5 +1,5 @@
 class Quote < ApplicationRecord
-    belongs_to :book
-    has_one :author, through: :book
+    belongs_to :work
+    has_one :author, through: :work
     belongs_to :translator
 end
