@@ -1,7 +1,4 @@
 class TextFormatter < ApplicationRecord
-    # Test text
-    # meditations = File.open("./texts/marcus_aurelius_meditations.txt")
-    # new_file = meditations.read
 
     def self.create_paragraphs(text_file)
         sections_split = text_file.split(/\n\n/)

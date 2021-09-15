@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Test text
+meditations = File.open("./texts/marcus_aurelius_meditations.txt")
+meditations_file = meditations.read
+TextFormatter.create_paragraphs(meditations_file)
