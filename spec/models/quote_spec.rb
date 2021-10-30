@@ -14,6 +14,12 @@ RSpec.describe Quote, type: :model do
     )
   }
 
+  let(:work_two){
+    Work.create(
+      title: "Discourses"
+    )
+  }
+
   let(:translator) {
     Translator.create(
       first_name: "Stephen",
@@ -47,6 +53,26 @@ RSpec.describe Quote, type: :model do
       section_num: 1,
     )
   }
+
+  let(:valid_quote) {
+    Quote.create(
+      work: work,
+      body: "There's a quote here",
+      translator: translator,
+      book_num: "II",
+      section_num: 1
+    )
+  }
+
+  let(:valid_quote_book_num_duplicate) {
+    Quote.new(
+      work: work,
+      body: "There's a quote here",
+      translator: translator,
+      book_num: "II",
+      section_num: 1
+    )
+  }
   
   it "requires a text body" do
     work.author = author
@@ -61,5 +87,12 @@ RSpec.describe Quote, type: :model do
   it "requires a book number" do
     work.author = author
     expect(no_book_num_quote).not_to be_valid
+  end
+
+  it "requires that the combination of book and section numbers for a quote be unique for each work" do
+    work.author = author
+    work_two.author = author
+    expect(valid_quote).to be_valid
+    expect(valid_quote_book_num_duplicate).not_to be_valid
   end
 end
