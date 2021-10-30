@@ -26,12 +26,26 @@ RSpec.describe Quote, type: :model do
       work: work,
       translator: translator,
       book_num: "I",
-      section_num: 2,
+      section_num: 2
+    )
+  }
+
+  let(:no_section_num_quote) {
+    Quote.new(
+      work: work,
+      body: "There's a quote here",
+      translator: translator,
+      book_num: "I",
     )
   }
   
   it "requires a text body" do
     work.author = author
     expect(no_body_quote).not_to be_valid
+  end
+
+  it "requires a section_num" do
+    work.author = author
+    expect(no_section_num_quote).not_to be_valid
   end
 end
