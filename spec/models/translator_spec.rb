@@ -23,7 +23,7 @@ RSpec.describe Translator, type: :model do
     expect(Translator.new(last_name: "Konstan")).not_to be_valid
   end
 
-  it "requires the uniqueness of an translator by first and last name" do
+  it "requires the uniqueness of a translator by first and last name" do
     expect(translator).to be_valid
     expect(translator_duplicate).not_to be_valid
   end
