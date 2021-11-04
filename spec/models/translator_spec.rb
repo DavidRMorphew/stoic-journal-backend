@@ -24,6 +24,7 @@ RSpec.describe Translator, type: :model do
   end
 
   it "requires the uniqueness of an translator by first and last name" do
+    expect(translator).to be_valid
     expect(translator_duplicate).not_to be_valid
   end
 end
