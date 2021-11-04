@@ -5,5 +5,6 @@ RSpec.describe Translator, type: :model do
     expect(Translator.new).not_to be_valid
     expect(Translator.new(first_name: "David", last_name: "Sedley")).to be_valid
     expect(Translator.new(first_name: "David")).not_to be_valid
+    expect(Translator.new(last_name: "Konstan")).not_to be_valid
   end
 end
