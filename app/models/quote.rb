@@ -4,4 +4,16 @@ class Quote < ApplicationRecord
     belongs_to :work
     has_one :author, through: :work
     belongs_to :translator
+
+    def translator_name
+        self.translator.first_name + ' ' + self.translator.last_name
+    end
+
+    def work_name
+        self.work.title
+    end
+
+    def author_name
+        self.author.name
+    end
 end
