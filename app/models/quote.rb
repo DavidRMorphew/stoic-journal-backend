@@ -12,4 +12,8 @@ class Quote < ApplicationRecord
     def work_name
         self.work.title
     end
+
+    def author_name
+        self.author.name
+    end
 end
