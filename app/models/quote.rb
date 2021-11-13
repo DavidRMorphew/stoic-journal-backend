@@ -8,4 +8,8 @@ class Quote < ApplicationRecord
     def translator_name
         self.translator.first_name + ' ' + self.translator.last_name
     end
+
+    def work_name
+        self.work.title
+    end
 end
