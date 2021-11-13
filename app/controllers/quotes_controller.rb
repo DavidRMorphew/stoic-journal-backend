@@ -2,12 +2,12 @@ class QuotesController < ApplicationController
   
   def index
     @quotes = Quote.all
-    render json: @quotes, except: [:created_at, :updated_at]
+    render json: QuoteSerializer.new(@quotes)
   end
 
   def show
     if @quote = Quote.find_by(id: params[:id])
-      render json: @quote, except: [:created_at, :updated_at]
+      render json: QuoteSerializer.new(@quote)
     end
   end
 end
